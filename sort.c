@@ -1,25 +1,39 @@
 #include <stdio.h>
-#include <string.h>
-sort() {
-    char str[5][50], temp[50];
-    printf("Enter 5 words: ");
-// Getting strings input
-    for (int i = 0; i < 5; ++i) {
-        fgets(str[i], sizeof(str[i]), stdin);
+#define MAXSIZE 10
+ 
+sort()
+{
+    int array[MAXSIZE];
+    int i, j, num, temp;
+ 
+    printf("Enter the value of num \n");
+    scanf("%d", &num);
+    printf("Enter the elements one by one \n");
+    for (i = 0; i < num; i++)
+    {
+        scanf("%d", &array[i]);
     }
-// storing strings in the lexicographical order
-    for (int i = 0; i < 5; ++i) {
-        for (int j = i + 1; j < 5; ++j) {
-            if (strcmp(str[i], str[j]) > 0) {
-                strcpy(temp, str[i]);
-                strcpy(str[i], str[j]);
-                strcpy(str[j], temp);
+    printf("Input array is \n");
+    for (i = 0; i < num; i++)
+    {
+        printf("%d\n", array[i]);
+    }
+    /*   Bubble sorting begins */
+    for (i = 0; i < num; i++)
+    {
+        for (j = 0; j < (num - i - 1); j++)
+        {
+            if (array[j] > array[j + 1])
+            {
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
             }
         }
     }
-    printf("\nIn the lexicographical order: \n");
-    for (int i = 0; i < 5; ++i) {
-        fputs(str[i], stdout);
+    printf("Sorted array is...\n");
+    for (i = 0; i < num; i++)
+    {
+        printf("%d\n", array[i]);
     }
-    //return 0;
 }
