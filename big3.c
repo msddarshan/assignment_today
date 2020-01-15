@@ -1,5 +1,4 @@
 #include <stdio.h>
- <!-->
 big3()
 {
     int num1, num2, num3;
