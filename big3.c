@@ -22,4 +22,6 @@ big3()
         printf("num2 is the greatest among three \n");
     else
         printf("num3 is the greatest among three \n");
-}
+
+ 
+ }
